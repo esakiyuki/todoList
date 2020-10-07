@@ -12,6 +12,8 @@ import RealmSwift
 class AddViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tangoTextField: UITextField!
+    @IBOutlet var deadlineTextField: UITextField!
+    @IBOutlet var timeTextField: UITextField!
     
 //    var wordArray: [Dictionary<String, String>] = []
     
@@ -23,6 +25,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         tangoTextField.delegate = self
+        timeTextField.delegate = self
+        deadlineTextField.delegate = self
         
 //        if saveData.array(forKey: "WORD") != nil {
 //            wordArray = saveData.array(forKey: "WORD") as! [Dictionary<String, String>]
@@ -39,6 +43,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveWord() {
         let newAddress = Address()
         newAddress.tango = tangoTextField.text!
+        newAddress.time = timeTextField.text!
+        newAddress.deadline = deadlineTextField.text!
         try! realm.write {
             realm.add(newAddress)
         }
@@ -46,6 +52,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 //        wordArray.append(wordDictionary)
 //        saveData.set(wordArray, forKey: "WORD")
         tangoTextField.text = ""
+        timeTextField.text = ""
+        deadlineTextField.text = ""
         self.navigationController?.popViewController(animated: true)
     }
     

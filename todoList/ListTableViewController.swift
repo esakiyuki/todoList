@@ -18,9 +18,17 @@ class ListTableViewController: UITableViewController {
     
     let realm = try! Realm()
     var addresses = try! Realm().objects(Address.self)
+    
+//    var imageArray: [image] = []
+    var imageArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageArray = ["checked", "unchecked"]
+//        imageArray.append(image(imageName: "checked"))
+//        imageArray.append(image(imageName: "unchecked"))
+//        imageView.image = imageArray[0].getimage()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,12 +48,16 @@ class ListTableViewController: UITableViewController {
 //        }
         self.tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,26 +70,41 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
 //        let nowIndexPathDictionary = wordArray[indexPath.row]
         cell.tangoLabel.text = addresses[indexPath.row].tango
+        cell.timeLabel.text = addresses[indexPath.row].time
+        cell.deadlineLabel.text = addresses[indexPath.row].deadline
 //        cell.tangoLabel.text = nowIndexPathDictionary["tango"]
         cell.selectionStyle = .none
+        
+//        cell.checkBox.image = UIImage(named: imageArray[indexPath.row])
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = .checkmark
-        cell?.backgroundColor = .red
+//        let cell = tableView.cellForRow(at: indexPath)
+//        cell?.accessoryType = .checkmark
+//        cell?.backgroundColor = .red
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+//        cell?.imageView?.image = UIImage(named: imageArray[indexPath.row])
+//        cell.img.image = UIImage(named: imageArray[indexPath.row])
+//        cell.checkBox?.image = UIImage(named: imageArray[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = .none
-        cell?.backgroundColor = .clear
+//        let cell = tableView.cellForRow(at: indexPath)
+//        cell?.accessoryType = .none
+//        cell?.backgroundColor = .clear
     }
     
     // セルの編集許可
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    // スワイプ削除
+    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         return true
     }
@@ -101,6 +128,10 @@ class ListTableViewController: UITableViewController {
             
         }
     }
+    
+//    @IBAction func buttonClicked() {
+//        cell.checkBox.image = UIImage(named: "checked")! as UIImage
+//    }
 
 
     /*

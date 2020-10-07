@@ -11,6 +11,11 @@ import UIKit
 class ListTableViewCell: UITableViewCell {
     
     @IBOutlet var tangoLabel: UILabel!
+    @IBOutlet var deadlineLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+//    @IBOutlet var checkBox: CheckBox!
+    @IBOutlet var checkBox: UIButton!
+//    @IBOutlet var img: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

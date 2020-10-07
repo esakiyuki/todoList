@@ -11,4 +11,7 @@ import RealmSwift
 
 class Address: Object {
     @objc dynamic var tango: String = ""
+//    @objc dynamic var photo: Data? = nil
+    @objc dynamic var time: String = ""
+    @objc dynamic var deadline: String = ""
 }

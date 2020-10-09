@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ScheduleViewController: UIViewController {
+    
+    let realm = try! Realm()
+//    var Schedule = try! Realm().objects(TimeTable.self)
+    var TimeTable: TimeTable!
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -44,6 +49,8 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.TimeTable = TimeTable()
+        
         buttonArray = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25]
         
         for i in 0...24 {
@@ -58,12 +65,26 @@ class ScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedButton(_ button: UIButton) {
-        if button.backgroundColor == .blue {
-            button.backgroundColor = .red
-        } else {
-            button.backgroundColor = .blue
+            if button.backgroundColor == .blue {
+                button.backgroundColor = .red
+            } else {
+                button.backgroundColor = .blue
+            }
+            
+            let tag = button.tag
+            if tag < 5 {
+    //            Schedule.MonDay[tag] = !Schedule.MonDay[tag]
+                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
+            } else if tag >= 5 && tag <= 10 {
+                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
+            } else if tag >= 10 && tag <= 15 {
+                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
+            } else if tag >= 15 && tag <= 20 {
+                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
+            } else if tag >= 20 && tag <= 25 {
+                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
+            }
         }
-    }
 
     /*
     // MARK: - Navigation

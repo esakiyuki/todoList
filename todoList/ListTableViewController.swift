@@ -21,6 +21,7 @@ class ListTableViewController: UITableViewController {
     
 //    var imageArray: [image] = []
     var imageArray = [String]()
+    let image = UIImage(named: "checked")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +86,13 @@ class ListTableViewController: UITableViewController {
 //        cell?.accessoryType = .checkmark
 //        cell?.backgroundColor = .red
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
 //        cell?.imageView?.image = UIImage(named: imageArray[indexPath.row])
 //        cell.img.image = UIImage(named: imageArray[indexPath.row])
-//        cell.checkBox?.image = UIImage(named: imageArray[indexPath.row])
+        
+//        cell.checkBox?.setImage(UIImage(contentsOfFile: imageArray[indexPath.row]), for: .normal)
+        cell.checkBox?.setImage(image, for: .normal)
+//        cell.checkBox?.setImage = UIImage(named: imageArray[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

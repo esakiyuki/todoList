@@ -20,13 +20,13 @@ class ListTableViewController: UITableViewController {
     var addresses = try! Realm().objects(Address.self)
     
 //    var imageArray: [image] = []
-    var imageArray = [String]()
+//    var imageArray = [String]()
     let image = UIImage(named: "checked")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageArray = ["checked", "unchecked"]
+//        imageArray = ["checked", "unchecked"]
 //        imageArray.append(image(imageName: "checked"))
 //        imageArray.append(image(imageName: "unchecked"))
 //        imageView.image = imageArray[0].getimage()
@@ -99,6 +99,9 @@ class ListTableViewController: UITableViewController {
 //        let cell = tableView.cellForRow(at: indexPath)
 //        cell?.accessoryType = .none
 //        cell?.backgroundColor = .clear
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+        cell.checkBox?.setImage(image, for: .normal)
     }
     
     // セルの編集許可
@@ -117,16 +120,17 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
 //            wordArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             
             // これはRealmSwiftでデータを削除しているケース
             let deleteaddresses = self.addresses[indexPath.row]
+//            let deleteaddresses = realm.objects(addresses.self)
             // Realmのデータ削除
             try! realm.write {
                 realm.delete(deleteaddresses)
             }
             // テーブルのデータ削除
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            //            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             // TableViewを再読み込み
             self.tableView.reloadData()
             

@@ -13,7 +13,13 @@ class ScheduleViewController: UIViewController {
     
     let realm = try! Realm()
 //    var Schedule = try! Realm().objects(TimeTable.self)
-    var TimeTable: TimeTable!
+//    var TimeTable: TimeTable!
+    
+//    let saveData = UserDefaults.standard
+//    var TimeTable: MonDay = [false, false, false, false, false]
+    
+//    var Schedule = User()
+//    var array = ScheduleArray(Schedule.TimeTables)
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -41,10 +47,7 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var button24: UIButton!
     @IBOutlet weak var button25: UIButton!
     
-//    let buttonArray = []
     var buttonArray: [UIButton] = []
-    
-//    @IBOutlet var buttonArray: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,10 @@ class ScheduleViewController: UIViewController {
             (self.buttonArray[i] as AnyObject).layer.borderWidth = 1.0
             buttonArray[i].backgroundColor = .blue
         }
+        
+//        let MonDay = TimeTable
+//        Schedule.TimeTables.append(objectsIn:[false, false, false, false, false])
+//        array = ScheduleArray(Schedule.TimeTables)
 
         // Do any additional setup after loading the view.
     }
@@ -71,20 +78,28 @@ class ScheduleViewController: UIViewController {
                 button.backgroundColor = .blue
             }
             
-            let tag = button.tag
-            if tag < 5 {
-    //            Schedule.MonDay[tag] = !Schedule.MonDay[tag]
-                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
-            } else if tag >= 5 && tag <= 10 {
-                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
-            } else if tag >= 10 && tag <= 15 {
-                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
-            } else if tag >= 15 && tag <= 20 {
-                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
-            } else if tag >= 20 && tag <= 25 {
-                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
-            }
-        }
+//            let tag = button.tag
+//            if tag < 5 {
+//                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
+//            } else if tag >= 5 && tag <= 10 {
+//                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
+//            } else if tag >= 10 && tag <= 15 {
+//                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
+//            } else if tag >= 15 && tag <= 20 {
+//                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
+//            } else if tag >= 20 && tag <= 25 {
+//                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
+//            }
+    }
+    
+    @IBAction func save() {
+//        let newTimeTable = TimeTable
+//        newTimeTable.MonDay = UIButton!
+//        try! realm.write {
+//            realm.add(newTimeTable)
+//        }
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

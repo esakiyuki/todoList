@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE13B0412534CDC000B0986F /* logotypejp_mp_b_1.1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE13B0402534CDC000B0986F /* logotypejp_mp_b_1.1.ttf */; };
+		AE13B0452534EDEB00B0986F /* haikei.png in Resources */ = {isa = PBXBuildFile; fileRef = AE13B0442534EDEA00B0986F /* haikei.png */; };
+		AE49B1612534A33A00F5C2C9 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE49B1602534A33A00F5C2C9 /* CheckBox.swift */; };
 		AE51D5FC2521AE2F0081804C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51D5FB2521AE2F0081804C /* AppDelegate.swift */; };
 		AE51D5FE2521AE2F0081804C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51D5FD2521AE2F0081804C /* SceneDelegate.swift */; };
 		AE51D6002521AE2F0081804C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51D5FF2521AE2F0081804C /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE13B0402534CDC000B0986F /* logotypejp_mp_b_1.1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = logotypejp_mp_b_1.1.ttf; sourceTree = "<group>"; };
+		AE13B0442534EDEA00B0986F /* haikei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haikei.png; sourceTree = "<group>"; };
+		AE49B1602534A33A00F5C2C9 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		AE51D5F82521AE2F0081804C /* todoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE51D5FB2521AE2F0081804C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE51D5FD2521AE2F0081804C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,18 +76,21 @@
 		AE51D5FA2521AE2F0081804C /* todoList */ = {
 			isa = PBXGroup;
 			children = (
+				AE13B0442534EDEA00B0986F /* haikei.png */,
+				AE13B0402534CDC000B0986F /* logotypejp_mp_b_1.1.ttf */,
 				AE51D5FB2521AE2F0081804C /* AppDelegate.swift */,
 				AE51D5FD2521AE2F0081804C /* SceneDelegate.swift */,
-				AE51D5FF2521AE2F0081804C /* ViewController.swift */,
 				AE51D6012521AE2F0081804C /* Main.storyboard */,
 				AE51D6042521AE380081804C /* Assets.xcassets */,
 				AE51D6062521AE380081804C /* LaunchScreen.storyboard */,
 				AE51D6092521AE380081804C /* Info.plist */,
 				AE51D60F2521AF080081804C /* ListTableViewCell.swift */,
 				AE51D6112521AF440081804C /* ListTableViewController.swift */,
+				AE51D5FF2521AE2F0081804C /* ViewController.swift */,
 				AE51D6132521BD540081804C /* AddViewController.swift */,
 				AE51D6152521C3690081804C /* ScheduleViewController.swift */,
 				AE987C662526E21000AE2F60 /* File.swift */,
+				AE49B1602534A33A00F5C2C9 /* CheckBox.swift */,
 			);
 			path = todoList;
 			sourceTree = "<group>";
@@ -153,6 +162,8 @@
 			files = (
 				AE51D6082521AE380081804C /* LaunchScreen.storyboard in Resources */,
 				AE51D6052521AE380081804C /* Assets.xcassets in Resources */,
+				AE13B0452534EDEB00B0986F /* haikei.png in Resources */,
+				AE13B0412534CDC000B0986F /* logotypejp_mp_b_1.1.ttf in Resources */,
 				AE51D6032521AE300081804C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +177,7 @@
 			files = (
 				AE51D6002521AE2F0081804C /* ViewController.swift in Sources */,
 				AE51D6102521AF080081804C /* ListTableViewCell.swift in Sources */,
+				AE49B1612534A33A00F5C2C9 /* CheckBox.swift in Sources */,
 				AE51D6142521BD550081804C /* AddViewController.swift in Sources */,
 				AE51D5FC2521AE2F0081804C /* AppDelegate.swift in Sources */,
 				AE51D6122521AF440081804C /* ListTableViewController.swift in Sources */,

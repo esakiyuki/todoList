@@ -21,7 +21,8 @@ class ListTableViewController: UITableViewController {
     
 //    var imageArray: [image] = []
 //    var imageArray = [String]()
-    let image = UIImage(named: "checked")
+    let checkedImage = UIImage(named: "checked")! as UIImage
+    let uncheckedImage = UIImage(named: "unchecked")! as UIImage
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,11 +88,30 @@ class ListTableViewController: UITableViewController {
 //        cell?.backgroundColor = .red
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+        //押したcellと関係なく上から順にチェックがついてしまう
+        cell.checkBox?.setImage(checkedImage, for: UIControl.State.normal)
+        
 //        cell?.imageView?.image = UIImage(named: imageArray[indexPath.row])
 //        cell.img.image = UIImage(named: imageArray[indexPath.row])
         
+//        var isChecked: Bool = false {
+//            didSet{
+//                if isChecked == true {
+//                    cell.checkBox?.setImage(checkedImage, for: UIControl.State.normal)
+//                } else {
+//                    cell.checkBox?.setImage(uncheckedImage, for: UIControl.State.normal)
+//                }
+//            }
+//        }
+//
+//        func setChecked(_ check : Bool){
+//            isChecked = check
+//        }
+        
+        self.tableView.reloadData()
+        
 //        cell.checkBox?.setImage(UIImage(contentsOfFile: imageArray[indexPath.row]), for: .normal)
-        cell.checkBox?.setImage(image, for: .normal)
+//        cell.checkBox?.setImage(checkedImage, for: .normal)
 //        cell.checkBox?.setImage = UIImage(named: imageArray[indexPath.row])
     }
     
@@ -100,8 +120,8 @@ class ListTableViewController: UITableViewController {
 //        cell?.accessoryType = .none
 //        cell?.backgroundColor = .clear
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
-        cell.checkBox?.setImage(image, for: .normal)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+//        cell.checkBox?.setImage(checkedImage, for: .normal)
     }
     
     // セルの編集許可

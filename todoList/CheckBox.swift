@@ -30,24 +30,11 @@ class CheckBox: UIButton {
         self.isChecked = false
     }
     
-//    @objc func buttonClicked(sender: UIButton) {
-//
-//    }
-    
-    @IBAction func buttonClicked(sender: UIButton) {
-        
+    @objc func buttonClicked(sender: UIButton) {
+
     }
     
     func setChecked(_ check : Bool){
         isChecked = check
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

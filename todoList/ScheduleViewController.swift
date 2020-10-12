@@ -61,7 +61,7 @@ class ScheduleViewController: UIViewController {
             (self.buttonArray[i] as AnyObject).layer.borderColor = UIColor.black.cgColor
             //外枠の太さを指定
             (self.buttonArray[i] as AnyObject).layer.borderWidth = 1.0
-            buttonArray[i].backgroundColor = .blue
+            buttonArray[i].backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
         }
         
 //        let MonDay = TimeTable
@@ -72,43 +72,43 @@ class ScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedButton(_ button: UIButton) {
-            if button.backgroundColor == .blue {
-                button.backgroundColor = .red
-            } else {
-                button.backgroundColor = .blue
-            }
-            
-//            let tag = button.tag
-//            if tag < 5 {
-//                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
-//            } else if tag >= 5 && tag <= 10 {
-//                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
-//            } else if tag >= 10 && tag <= 15 {
-//                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
-//            } else if tag >= 15 && tag <= 20 {
-//                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
-//            } else if tag >= 20 && tag <= 25 {
-//                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
-//            }
+        if button.backgroundColor == UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0) {
+            button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
+        } else {
+            button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
+        }
+        
+        //            let tag = button.tag
+        //            if tag < 5 {
+        //                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
+        //            } else if tag >= 5 && tag <= 10 {
+        //                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
+        //            } else if tag >= 10 && tag <= 15 {
+        //                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
+        //            } else if tag >= 15 && tag <= 20 {
+        //                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
+        //            } else if tag >= 20 && tag <= 25 {
+        //                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
+        //            }
     }
     
     @IBAction func save() {
-//        let newTimeTable = TimeTable
-//        newTimeTable.MonDay = UIButton!
-//        try! realm.write {
-//            realm.add(newTimeTable)
-//        }
+        //        let newTimeTable = TimeTable
+        //        newTimeTable.MonDay = UIButton!
+        //        try! realm.write {
+        //            realm.add(newTimeTable)
+        //        }
         self.navigationController?.popViewController(animated: true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

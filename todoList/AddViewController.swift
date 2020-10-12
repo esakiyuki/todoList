@@ -40,21 +40,41 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func saveWord() {
         let newAddress = Address()
         newAddress.tango = tangoTextField.text!
         newAddress.time = timeTextField.text!
         newAddress.deadline = deadlineTextField.text!
-        try! realm.write {
-            realm.add(newAddress)
+//        try! realm.write {
+//            realm.add(newAddress)
+//        }
+//        tangoTextField.text = ""
+//        timeTextField.text = ""
+//        deadlineTextField.text = ""
+//        self.navigationController?.popViewController(animated: true)
+        
+        if tangoTextField.text == "" || deadlineTextField.text == "" || timeTextField.text == "" {
+            let alert = UIAlertController(
+                        title: "保存できません",
+                        message: "すべての項目に入力してください",
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .default,
+                        handler: nil
+                    ))
+                    present(alert, animated: true, completion: nil)
+        } else {
+            try! realm.write {
+                realm.add(newAddress)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
-//        let wordDictionary = ["tango": tangoTextField.text!]
-//        wordArray.append(wordDictionary)
-//        saveData.set(wordArray, forKey: "WORD")
-        tangoTextField.text = ""
-        timeTextField.text = ""
-        deadlineTextField.text = ""
-        self.navigationController?.popViewController(animated: true)
     }
     
     

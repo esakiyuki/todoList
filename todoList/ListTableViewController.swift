@@ -11,26 +11,11 @@ import RealmSwift
 
 class ListTableViewController: UITableViewController {
     
-//    @IBOutlet var tableView: UITableView!
-    
-//    var wordArray: [Dictionary<String, String>] = []
-//    let saveData = UserDefaults.standard
-    
     let realm = try! Realm()
     var addresses = try! Realm().objects(Address.self)
-    
-//    var imageArray: [image] = []
-//    var imageArray = [String]()
-    let checkedImage = UIImage(named: "checked")! as UIImage
-    let uncheckedImage = UIImage(named: "unchecked")! as UIImage
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        imageArray = ["checked", "unchecked"]
-//        imageArray.append(image(imageName: "checked"))
-//        imageArray.append(image(imageName: "unchecked"))
-//        imageView.image = imageArray[0].getimage()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,9 +30,7 @@ class ListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        if saveData.array(forKey: "WORD") != nil {
-//            wordArray = saveData.array(forKey: "WORD") as! [Dictionary<String, String>]
-//        }
+
         self.tableView.reloadData()
     }
     
@@ -70,58 +53,20 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
-//        let nowIndexPathDictionary = wordArray[indexPath.row]
         cell.tangoLabel.text = addresses[indexPath.row].tango
         cell.timeLabel.text = addresses[indexPath.row].time
         cell.deadlineLabel.text = addresses[indexPath.row].deadline
-//        cell.tangoLabel.text = nowIndexPathDictionary["tango"]
         cell.selectionStyle = .none
-        
-//        cell.checkBox.image = UIImage(named: imageArray[indexPath.row])
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        cell?.accessoryType = .checkmark
-//        cell?.backgroundColor = .red
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
-        //押したcellと関係なく上から順にチェックがついてしまう
-        cell.checkBox?.setImage(checkedImage, for: UIControl.State.normal)
-        
-//        cell?.imageView?.image = UIImage(named: imageArray[indexPath.row])
-//        cell.img.image = UIImage(named: imageArray[indexPath.row])
-        
-//        var isChecked: Bool = false {
-//            didSet{
-//                if isChecked == true {
-//                    cell.checkBox?.setImage(checkedImage, for: UIControl.State.normal)
-//                } else {
-//                    cell.checkBox?.setImage(uncheckedImage, for: UIControl.State.normal)
-//                }
-//            }
-//        }
-//
-//        func setChecked(_ check : Bool){
-//            isChecked = check
-//        }
-        
         self.tableView.reloadData()
         
-//        cell.checkBox?.setImage(UIImage(contentsOfFile: imageArray[indexPath.row]), for: .normal)
-//        cell.checkBox?.setImage(checkedImage, for: .normal)
-//        cell.checkBox?.setImage = UIImage(named: imageArray[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        cell?.accessoryType = .none
-//        cell?.backgroundColor = .clear
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
-//        cell.checkBox?.setImage(checkedImage, for: .normal)
     }
     
     // セルの編集許可
@@ -156,11 +101,6 @@ class ListTableViewController: UITableViewController {
             
         }
     }
-    
-//    @IBAction func buttonClicked() {
-//        cell.checkBox.image = UIImage(named: "checked")! as UIImage
-//    }
-
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

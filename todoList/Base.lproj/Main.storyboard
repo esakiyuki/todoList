@@ -30,12 +30,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-H9-o2B">
-                                <rect key="frame" x="203" y="229" width="173" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iip-JT-GEV">
                                 <rect key="frame" x="203" y="104" width="173" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,11 +70,22 @@
                                     <segue destination="xNv-7k-SJU" kind="presentation" id="lqA-Mr-oC0"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bae-qJ-A8G">
+                                <rect key="frame" x="52" y="138" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-H9-o2B">
+                                <rect key="frame" x="203" y="561" width="173" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="fc3-gN-duY"/>
                     </view>
                     <connections>
+                        <outlet property="DatePicker" destination="Bae-qJ-A8G" id="zhi-pr-mAn"/>
                         <outlet property="deadlineTextField" destination="P0X-H9-o2B" id="FsI-qK-ktn"/>
                         <outlet property="tangoTextField" destination="Khp-qG-nqV" id="VCv-80-wg1"/>
                         <outlet property="timeTextField" destination="Iip-JT-GEV" id="jY5-6t-DfX"/>
@@ -88,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Km-fi-Uyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155.07246376811597" y="93.75"/>
+            <point key="canvasLocation" x="270" y="94"/>
         </scene>
         <!--課題リスト-->
         <scene sceneID="1fG-e3-d2Y">
@@ -98,6 +103,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="haikei.png" id="Cr6-DL-93N">
+                            <rect key="frame" x="0.0" y="126" width="414" height="827"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="NuR-Ns-0Zf" customClass="ListTableViewCell" customModule="todoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -106,37 +115,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTS-HF-hyR">
-                                            <rect key="frame" x="66" y="26" width="55" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
-                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-D1-aJ2">
-                                            <rect key="frame" x="129" y="25" width="86" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
-                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-11-OkV">
-                                            <rect key="frame" x="232" y="24" width="162" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
-                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-xf-bK2" customClass="CheckBox" customModule="todoList" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="17" width="36" height="36"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-xf-bK2">
+                                            <rect key="frame" x="10" y="17" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button" image="unchecked"/>
+                                            <connections>
+                                                <action selector="check:" destination="NuR-Ns-0Zf" eventType="touchUpInside" id="BIk-BP-10U"/>
+                                            </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTS-HF-hyR">
+                                            <rect key="frame" x="53" y="25" width="47" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
+                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13日15時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-D1-aJ2">
+                                            <rect key="frame" x="104" y="25" width="120" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
+                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="レポート" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-11-OkV">
+                                            <rect key="frame" x="232" y="25" width="169" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
+                                            <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.019607843137254902" green="0.396078431372549" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.019607843137254902" green="0.396078431372549" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="checkBox" destination="Msl-xf-bK2" id="khe-qG-54D"/>
+                                    <outlet property="checkBox" destination="Msl-xf-bK2" id="x4t-Vj-qJ0"/>
                                     <outlet property="deadlineLabel" destination="Bqi-D1-aJ2" id="VOY-gM-rn4"/>
                                     <outlet property="tangoLabel" destination="HA7-11-OkV" id="PyD-mK-7xh"/>
                                     <outlet property="timeLabel" destination="bTS-HF-hyR" id="nac-Cf-gX9"/>
@@ -579,7 +591,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7h-BO-ZZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="93.75"/>
+            <point key="canvasLocation" x="1080" y="94"/>
         </scene>
     </scenes>
     <resources>

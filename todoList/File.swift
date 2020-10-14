@@ -8,7 +8,6 @@
 
 import Foundation
 import RealmSwift
-import UIKit
 
 class Address: Object {
     @objc dynamic var tango: String = ""

@@ -10,6 +10,31 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+
+        //　通知設定に必要なクラスをインスタンス化
+        let trigger: UNNotificationTrigger
+        let content = UNMutableNotificationContent()
+        var notificationTime = DateComponents()
+
+        // トリガー設定
+        notificationTime.hour = 12
+        notificationTime.minute = 0
+        trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
+
+        // 通知内容の設定
+        content.title = ""
+        content.body = "締め切り間近の課題があります"
+        content.sound = UNNotificationSound.default
+
+        // 通知スタイルを指定
+        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
+        // 通知をセット
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+    }
+    
 
 
 

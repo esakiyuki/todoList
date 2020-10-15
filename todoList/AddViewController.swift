@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet var tangoTextField: UITextField!
     @IBOutlet var deadlineTextField: UITextField!
@@ -19,8 +19,37 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     let realm = try! Realm()
     
+    
+//    // 設定に必要なクラスをインスタンス化
+//    var notificationTime = DateComponents()
+//    var trigger: UNNotificationTrigger!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        // 12時に通知する場合
+//        notificationTime.hour = 12
+//        notificationTime.minute = 0
+//        trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
+////        trigger = UNCalendarNotificationTrigger(dateMatching: datePicker, repeats: false)
+//
+//        // 設定したタイミングを起点として1時間前に通知したい場合
+//        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60*60, repeats: false)
+//        
+//        // UNMutableNotificationContentクラスをインスタンス化
+//        let content = UNMutableNotificationContent()
+//
+//        // 通知のメッセージセット
+//        content.title = ""
+////        content.body = "締め切り一時間前の課題があります"
+//        content.body = "締め切り間近の課題があります"
+//        content.sound = UNNotificationSound.default
+//        
+//        // 通知スタイルを指定
+//        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
+//        // 通知をセット
+//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
         
         tangoTextField.delegate = self
         timeTextField.delegate = self

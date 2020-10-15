@@ -82,9 +82,9 @@
 				AE51D6042521AE380081804C /* Assets.xcassets */,
 				AE51D6062521AE380081804C /* LaunchScreen.storyboard */,
 				AE51D6092521AE380081804C /* Info.plist */,
+				AE51D5FF2521AE2F0081804C /* ViewController.swift */,
 				AE51D60F2521AF080081804C /* ListTableViewCell.swift */,
 				AE51D6112521AF440081804C /* ListTableViewController.swift */,
-				AE51D5FF2521AE2F0081804C /* ViewController.swift */,
 				AE51D6132521BD540081804C /* AddViewController.swift */,
 				AE51D6152521C3690081804C /* ScheduleViewController.swift */,
 				AE987C662526E21000AE2F60 /* File.swift */,
@@ -323,14 +323,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = todoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.esaki.yukki.todoList;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.lifeistech.SchoolTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,14 +342,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = todoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.esaki.yukki.todoList;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.lifeistech.SchoolTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

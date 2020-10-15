@@ -15,9 +15,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var deadlineTextField: UITextField!
     @IBOutlet var timeTextField: UITextField!
     
-//    var wordArray: [Dictionary<String, String>] = []
-    
-//    let saveData = UserDefaults.standard
+    var datePicker: UIDatePicker = UIDatePicker()
     
     let realm = try! Realm()
     
@@ -28,11 +26,40 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         timeTextField.delegate = self
         deadlineTextField.delegate = self
         
-//        if saveData.array(forKey: "WORD") != nil {
-//            wordArray = saveData.array(forKey: "WORD") as! [Dictionary<String, String>]
-//        }
+//        datePicker.minuteInterval = 30;
+                
+        // ピッカー設定
+        //        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
+        deadlineTextField.inputView = datePicker
+        
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        deadlineTextField.inputView = datePicker
+        deadlineTextField.inputAccessoryView = toolbar
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func done() {
+        deadlineTextField.endEditing(true)
+        
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+        
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+        //        formatter.dateFormat = "yyyy年MM月dd日"
+        formatter.dateFormat = "MM/dd HH:mm"
+        
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        deadlineTextField.text = "\(formatter.string(from: datePicker.date))"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -49,26 +76,26 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         newAddress.tango = tangoTextField.text!
         newAddress.time = timeTextField.text!
         newAddress.deadline = deadlineTextField.text!
-//        try! realm.write {
-//            realm.add(newAddress)
-//        }
-//        tangoTextField.text = ""
-//        timeTextField.text = ""
-//        deadlineTextField.text = ""
-//        self.navigationController?.popViewController(animated: true)
+        //        try! realm.write {
+        //            realm.add(newAddress)
+        //        }
+        //        tangoTextField.text = ""
+        //        timeTextField.text = ""
+        //        deadlineTextField.text = ""
+        //        self.navigationController?.popViewController(animated: true)
         
         if tangoTextField.text == "" || deadlineTextField.text == "" || timeTextField.text == "" {
             let alert = UIAlertController(
-                        title: "保存できません",
-                        message: "すべての項目に入力してください",
-                        preferredStyle: .alert
-                    )
-                    alert.addAction(UIAlertAction(
-                        title: "OK",
-                        style: .default,
-                        handler: nil
-                    ))
-                    present(alert, animated: true, completion: nil)
+                title: "保存できません",
+                message: "すべての項目に入力してください",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: nil
+            ))
+            present(alert, animated: true, completion: nil)
         } else {
             try! realm.write {
                 realm.add(newAddress)

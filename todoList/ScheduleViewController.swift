@@ -16,7 +16,12 @@ class ScheduleViewController: UIViewController {
 //    var TimeTable: TimeTable!
     
 //    let saveData = UserDefaults.standard
-//    var TimeTable: MonDay = [false, false, false, false, false]
+//    var TimeTable: [Bool] = [false, false, false, false, false]
+//    var MonDay: [Bool] = [false, false, false, false, false]
+//    var TueDay: [Bool] = [false, false, false, false, false]
+//    var WedDay: [Bool] = [false, false, false, false, false]
+//    var ThuDay: [Bool] = [false, false, false, false, false]
+//    var FriDay: [Bool] = [false, false, false, false, false]
     
 //    var Schedule = User()
 //    var array = ScheduleArray(Schedule.TimeTables)
@@ -78,18 +83,30 @@ class ScheduleViewController: UIViewController {
             button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
         }
         
-        //            let tag = button.tag
-        //            if tag < 5 {
-        //                TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
-        //            } else if tag >= 5 && tag <= 10 {
-        //                TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
-        //            } else if tag >= 10 && tag <= 15 {
-        //                TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
-        //            } else if tag >= 15 && tag <= 20 {
-        //                TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
-        //            } else if tag >= 20 && tag <= 25 {
-        //                TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
-        //            }
+//        let tag = button.tag
+//        if tag < 5 {
+//            MonDay[tag] = !MonDay[tag]
+//        } else if tag >= 5 && tag <= 10 {
+//            TueDay[tag] = !TueDay[tag]
+//        } else if tag >= 10 && tag <= 15 {
+//            WedDay[tag] = !WedDay[tag]
+//        } else if tag >= 15 && tag <= 20 {
+//            ThuDay[tag] = !ThuDay[tag]
+//        } else if tag >= 20 && tag <= 25 {
+//            FriDay[tag] = !FriDay[tag]
+//        }
+        
+//        if tag < 5 {
+//            TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
+//        } else if tag >= 5 && tag <= 10 {
+//            TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
+//        } else if tag >= 10 && tag <= 15 {
+//            TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
+//        } else if tag >= 15 && tag <= 20 {
+//            TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
+//        } else if tag >= 20 && tag <= 25 {
+//            TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
+//        }
     }
     
     @IBAction func save() {

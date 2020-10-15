@@ -11,34 +11,13 @@ import RealmSwift
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var DatePicker: UIDatePicker!
-//    let datePicker: UIDatePicker = {
-//        let dp = UIDatePicker()
-//        dp.datePickerMode = UIDatePicker.Mode.dateAndTime
-//        dp.timeZone = NSTimeZone.local
-//        dp.locale = Locale.current
-//        dp.addTarget(self, action: #selector(dateChange), for: .valueChanged)
-//        return dp
-//    }()
-//
-//    @objc func dateChange(){
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM/dd hh:mm"
-//        timeLimitTextField.text = "\(formatter.string(from: datePicker.date))"
-//    }
-//
-//    func textField(_ textField: UITextField,
-//                   shouldChangeCharactersIn range: NSRange,
-//                   replacementString string: String) -> Bool {
-//        // キーボード入力や、カット/ペースによる変更を防ぐ
-//        return false
-//    }
-//
-//    let timeTextField = UITextField()
+//    @IBOutlet var DatePicker: UIDatePicker!
     
     @IBOutlet var tangoTextField: UITextField!
     @IBOutlet var deadlineTextField: UITextField!
     @IBOutlet var timeTextField: UITextField!
+    
+    var datePicker: UIDatePicker = UIDatePicker()
     
     let realm = try! Realm()
 
@@ -46,13 +25,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        DatePicker.minuteInterval = 30;
-//        timeTextField.inputView = datePicker
-//        timeLimitTextField.delegate = self
-        
         tangoTextField.delegate = self
         timeTextField.delegate = self
         deadlineTextField.delegate = self
+        
+//        datePicker.minuteInterval = 30;
+        
+        // ピッカー設定
+//        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
+        deadlineTextField.inputView = datePicker
+
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        deadlineTextField.inputView = datePicker
+        deadlineTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func done() {
+        deadlineTextField.endEditing(true)
+
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+//        formatter.dateFormat = "yyyy年MM月dd日"
+        formatter.dateFormat = "MM/dd HH:mm"
+
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        deadlineTextField.text = "\(formatter.string(from: datePicker.date))"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="Nju-iT-glw">
             <objects>
-                <viewController id="DDT-ck-fo6" customClass="ViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DDT-ck-fo6" customClass="ViewController" customModule="SchoolToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yqu-0h-zaf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,8 +32,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvy-I5-WSJ">
-                                <rect key="frame" x="39" y="111" width="40" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="授業日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvy-I5-WSJ">
+                                <rect key="frame" x="39" y="111" width="60" height="20"/>
                                 <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
         <!--課題リスト-->
         <scene sceneID="1fG-e3-d2Y">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="poc-VT-Sp8" customClass="ListTableViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="poc-VT-Sp8" customClass="ListTableViewController" customModule="SchoolToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LeA-uJ-Wuc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="NuR-Ns-0Zf" customClass="ListTableViewCell" customModule="todoList" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="NuR-Ns-0Zf" customClass="ListTableViewCell" customModule="SchoolToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuR-Ns-0Zf" id="NW1-b4-8FK">
@@ -219,7 +219,7 @@
         <!--時間割-->
         <scene sceneID="hv8-ts-7P7">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="6Sk-wu-AcJ" customClass="ScheduleViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="6Sk-wu-AcJ" customClass="ScheduleViewController" customModule="SchoolToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8OM-3h-q1O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,7 +681,7 @@
         <!--新規入力-->
         <scene sceneID="vsb-HW-7P4">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="oTU-7M-QH5" customClass="AddViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="oTU-7M-QH5" customClass="AddViewController" customModule="SchoolToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="439-kA-9yI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -714,8 +714,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-6e-j7E">
-                                <rect key="frame" x="39" y="155" width="40" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="授業日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-6e-j7E">
+                                <rect key="frame" x="39" y="155" width="60" height="20"/>
                                 <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

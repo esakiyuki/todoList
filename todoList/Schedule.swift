@@ -14,9 +14,9 @@ class Schedule: UIButton {
     let whiteImage = UIImage(named: "white")! as UIImage
     
     // Bool property
-    var isChecked: Bool = false {
+    var tap: Bool = false {
         didSet{
-            if isChecked == true {
+            if tap == true {
                 self.setImage(redImage, for: UIControl.State.normal)
             } else {
                 self.setImage(whiteImage, for: UIControl.State.normal)
@@ -26,12 +26,12 @@ class Schedule: UIButton {
     
     override func awakeFromNib() {
         self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
-        self.isChecked = false
+        self.tap = false
     }
     
     @objc func buttonClicked(sender: UIButton) {
         if sender == self {
-            isChecked = !isChecked
+            tap = !tap
         }
     }
 }

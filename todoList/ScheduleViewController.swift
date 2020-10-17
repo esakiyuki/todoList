@@ -7,24 +7,12 @@
 //
 
 import UIKit
-//import RealmSwift
+import RealmSwift
 
 class ScheduleViewController: UIViewController {
     
-//    let realm = try! Realm()
-//    var Schedule = try! Realm().objects(TimeTable.self)
-//    var TimeTable: TimeTable!
-    
+    let realm = try! Realm()
 //    let saveData = UserDefaults.standard
-//    var array = false
-//    var TimeTable: [Bool] = [false]
-//    var TimeTable: Bool = false
-    
-//    var MonDay: [Bool] = [false, false, false, false, false]
-//    var TueDay: [Bool] = [false, false, false, false, false]
-//    var WedDay: [Bool] = [false, false, false, false, false]
-//    var ThuDay: [Bool] = [false, false, false, false, false]
-//    var FriDay: [Bool] = [false, false, false, false, false]
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -53,159 +41,62 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var button25: UIButton!
     
     var buttonArray: [UIButton] = []
+    
+//    let redImage = UIImage(named: "red")! as UIImage
+//    let whiteImage = UIImage(named: "white")! as UIImage
+//    var tap: Bool = false
+//    var isChecked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        buttonArray.isEnabled = true
-//        buttonArray.isEnabled = false
-        
-//        let getMonDay: [Bool] = saveData.array(forKey: "MonDay") as! [Bool]
-//        let getTueDay: [Bool] = saveData.array(forKey: "TueDay") as! [Bool]
-//        let getWedDay: [Bool] = saveData.array(forKey: "WedDay") as! [Bool]
-//        let getThuDay: [Bool] = saveData.array(forKey: "ThuDay") as! [Bool]
-//        let getFriDay: [Bool] = saveData.array(forKey: "FriDay") as! [Bool]
-        
-//        let value = UserDefaults.standard.bool(forKey: "timetable")
-//        print(value)
-        
-//        buttonArray = saveData.object(forKey: "timetable") as! [UIButton]
-        
-//        var array = saveData.array(forKey: "TimeTable")  as? [Bool] ?? [Bool]()
 //        UserDefaults.standard.array(forKey: "TimeTable")
         
-//        self.TimeTable = TimeTable()
+//        isChecked = saveData.object(forKey: "TimeTable") as! Bool
         
         buttonArray = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25]
         
-        for i in 0...24 {
+//        for i in 0...24 {
             //外枠の色を指定
-            (self.buttonArray[i] as AnyObject).layer.borderColor = UIColor.black.cgColor
+//            (self.buttonArray[i] as AnyObject).layer.borderColor = UIColor.black.cgColor
             //外枠の太さを指定
-            (self.buttonArray[i] as AnyObject).layer.borderWidth = 1.0
-//            buttonArray[i].backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
-//            buttonArray[i].setImage(whiteImage, for: UIControl.State())
-        }
+//            (self.buttonArray[i] as AnyObject).layer.borderWidth = 1.0
+//        }
         
-//        let MonDay = TimeTable
-//        Schedule.TimeTables.append(objectsIn:[false, false, false, false, false])
-//        array = ScheduleArray(Schedule.TimeTables)
-
         // Do any additional setup after loading the view.
     }
     
-//    let redImage = UIImage(named: "red")! as UIImage
-//    let whiteImage = UIImage(named: "white")! as UIImage
-//    var flg = false
-    
-    @IBAction func tappedButton(_ button: Schedule) {
-//        print(sender.isChecked)
-        
-//        if button.backgroundColor == UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0) {
-//            button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
-//        } else {
-//            button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
-//        }
-        
-//        var array: Bool = false {
-//            didSet{
-//                if array == true {
-//                    button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
-//                } else {
-//                    button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
-//                }
-//            }
-//        }
-        
-//        if array {
-//            button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
-//            array = false
-//            print("false")
-//        } else {
-//            button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
-//            array = true
-//            print("true")
-//        }
-        
-        
-//        saveData.set(buttonArray, forKey: "tapped")
-        
-//        if flg {
-//            for i in 0...24  {
-//                buttonArray[i].setImage(redImage, for: UIControl.State())
-//                flg = false
-//                print("false")
-//            }
-//        } else {
-//            for i in 0...24  {
-//                buttonArray[i].setImage(whiteImage, for: UIControl.State())
-//                flg = true
-//                print("true")
-//            }
-//        }
-        
-//        if flg {
-//            button1.setImage(whiteImage, for: UIControl.State())
-//            flg = false
-//            print("false")
-//        } else {
-//            button1.setImage(redImage, for: UIControl.State())
-//            flg = true
-//            print("true")
-//        }
-        
-//        if flg {
-//            button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
-//            flg = false
-//            print("false")
-//        } else {
-//            button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
-//            flg = true
-//            print("true")
-//        }
-        
+    @IBAction func tappedButton(_ button: UIButton) {
 //        let tag = button.tag
-//        if tag < 5 {
-//            MonDay[tag] = !MonDay[tag]
-//        } else if tag <= 5 && tag >= 10 {
-//            TueDay[tag] = !TueDay[tag]
-//        } else if tag <= 10 && tag >= 15 {
-//            WedDay[tag] = !WedDay[tag]
-//        } else if tag <= 15 && tag >= 20 {
-//            ThuDay[tag] = !ThuDay[tag]
-//        } else if tag <= 20 && tag >= 25 {
-//            FriDay[tag] = !FriDay[tag]
-//        }
         
-//        if tag < 5 {
-//            TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
-//        } else if tag >= 5 && tag <= 10 {
-//            TimeTable.TueDay[tag] = !TimeTable.TueDay[tag]
-//        } else if tag >= 10 && tag <= 15 {
-//            TimeTable.WedDay[tag] = !TimeTable.WedDay[tag]
-//        } else if tag >= 15 && tag <= 20 {
-//            TimeTable.ThuDay[tag] = !TimeTable.ThuDay[tag]
-//        } else if tag >= 20 && tag <= 25 {
-//            TimeTable.FriDay[tag] = !TimeTable.FriDay[tag]
+//        if tap {
+//            button.setImage(whiteImage, for: UIControl.State())
+//            tap = false
+//            print("false")
+//        } else {
+////            button[tag] = !button[tag]
+//            button.setImage(redImage, for: UIControl.State())
+//            tap = true
+//            print("true")
 //        }
     }
     
+//    @objc func buttonClicked(sender: UIButton) {
+//        if sender == self {
+//            isChecked = !isChecked
+//        }
+//    }
+    
     @IBAction func save() {
-        //        let newTimeTable = TimeTable
-        //        newTimeTable.MonDay = UIButton!
-        //        try! realm.write {
-        //            realm.add(newTimeTable)
-        //        }
+//        UserDefaults.standard.set(buttonArray, forKey: "timetable")
         
-//        saveData.set(MonDay, forKey: "MonDay")
-//        saveData.set(TueDay, forKey: "TueDay")
-//        saveData.set(WedDay, forKey: "WedDay")
-//        saveData.set(ThuDay, forKey: "ThuDay")
-//        saveData.set(FriDay, forKey: "FriDay")
+//        saveData.set(isChecked, forKey: "TimeTable")
         
-//        saveData.set(buttonArray, forKey: "timetable")
-//        UserDefaults.standard.set(TimeTable, forKey: "timetable")
-//        saveData.set(array, forKey: "TimeTable")
+//        let newTimeTable = TimeTable()
+//        newTimeTable.Schedule1 = tap
+//        try! realm.write {
+//            realm.add(newTimeTable)
+//        }
         
         self.navigationController?.popViewController(animated: true)
     }

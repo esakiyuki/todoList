@@ -1,26 +1,25 @@
 //
-//  CheckBox.swift
+//  Schedule.swift
 //  todoList
 //
-//  Created by esaki yuki on 2020/10/05.
+//  Created by esaki yuki on 2020/10/17.
 //  Copyright © 2020 esaki yuKki. All rights reserved.
 //
 
 import UIKit
 
-class CheckBox: UIButton {
-
+class Schedule: UIButton {
     // Images
-    let checkedImage = UIImage(named: "checked")! as UIImage
-    let uncheckedImage = UIImage(named: "unchecked")! as UIImage
+    let redImage = UIImage(named: "red")! as UIImage
+    let whiteImage = UIImage(named: "white")! as UIImage
     
     // Bool property
     var isChecked: Bool = false {
         didSet{
             if isChecked == true {
-                self.setImage(checkedImage, for: UIControl.State.normal)
+                self.setImage(redImage, for: UIControl.State.normal)
             } else {
-                self.setImage(uncheckedImage, for: UIControl.State.normal)
+                self.setImage(whiteImage, for: UIControl.State.normal)
             }
         }
     }
@@ -31,10 +30,8 @@ class CheckBox: UIButton {
     }
     
     @objc func buttonClicked(sender: UIButton) {
-
-    }
-    
-    func setChecked(_ check : Bool){
-        isChecked = check
+        if sender == self {
+            isChecked = !isChecked
+        }
     }
 }

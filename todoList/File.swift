@@ -21,31 +21,33 @@ class Address: Object {
 }
 
 class TimeTable: Object {
-    @objc dynamic var Schedule1: Bool = false
-    @objc dynamic var Schedule2: Bool = false
-    @objc dynamic var Schedule3: Bool = false
-    @objc dynamic var Schedule4: Bool = false
-    @objc dynamic var Schedule5: Bool = false
-    @objc dynamic var Schedule6: Bool = false
-    @objc dynamic var Schedule7: Bool = false
-    @objc dynamic var Schedule8: Bool = false
-    @objc dynamic var Schedule9: Bool = false
-    @objc dynamic var Schedule10: Bool = false
-    @objc dynamic var Schedule11: Bool = false
-    @objc dynamic var Schedule12: Bool = false
-    @objc dynamic var Schedule13: Bool = false
-    @objc dynamic var Schedule14: Bool = false
-    @objc dynamic var Schedule15: Bool = false
-    @objc dynamic var Schedule16: Bool = false
-    @objc dynamic var Schedule17: Bool = false
-    @objc dynamic var Schedule18: Bool = false
-    @objc dynamic var Schedule19: Bool = false
-    @objc dynamic var Schedule20: Bool = false
-    @objc dynamic var Schedule21: Bool = false
-    @objc dynamic var Schedule22: Bool = false
-    @objc dynamic var Schedule23: Bool = false
-    @objc dynamic var Schedule24: Bool = false
-    @objc dynamic var Schedule25: Bool = false
+//    @objc dynamic var Schedule: Bool = false
+    
+//    @objc dynamic var Schedule1: Bool = false
+//    @objc dynamic var Schedule2: Bool = false
+//    @objc dynamic var Schedule3: Bool = false
+//    @objc dynamic var Schedule4: Bool = false
+//    @objc dynamic var Schedule5: Bool = false
+//    @objc dynamic var Schedule6: Bool = false
+//    @objc dynamic var Schedule7: Bool = false
+//    @objc dynamic var Schedule8: Bool = false
+//    @objc dynamic var Schedule9: Bool = false
+//    @objc dynamic var Schedule10: Bool = false
+//    @objc dynamic var Schedule11: Bool = false
+//    @objc dynamic var Schedule12: Bool = false
+//    @objc dynamic var Schedule13: Bool = false
+//    @objc dynamic var Schedule14: Bool = false
+//    @objc dynamic var Schedule15: Bool = false
+//    @objc dynamic var Schedule16: Bool = false
+//    @objc dynamic var Schedule17: Bool = false
+//    @objc dynamic var Schedule18: Bool = false
+//    @objc dynamic var Schedule19: Bool = false
+//    @objc dynamic var Schedule20: Bool = false
+//    @objc dynamic var Schedule21: Bool = false
+//    @objc dynamic var Schedule22: Bool = false
+//    @objc dynamic var Schedule23: Bool = false
+//    @objc dynamic var Schedule24: Bool = false
+//    @objc dynamic var Schedule25: Bool = false
 }
 
 //class TimeTable: Object {

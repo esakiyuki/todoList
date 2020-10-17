@@ -9,13 +9,16 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var pickerView: UIPickerView = UIPickerView()
+    let list = ["", "月1", "月2", "月3", "月4", "月5", "火1", "火2", "火3", "火4", "火5", "水1", "水2", "水3", "水4", "水5", "木1", "木2", "木3", "木4", "木5", "金1", "金2", "金3", "金4", "金5"]
     
 //    @IBOutlet var DatePicker: UIDatePicker!
     
-    @IBOutlet var tangoTextField: UITextField!
-    @IBOutlet var deadlineTextField: UITextField!
     @IBOutlet var timeTextField: UITextField!
+    @IBOutlet var deadlineTextField: UITextField!
+    @IBOutlet var tangoTextField: UITextField!
     
     var datePicker: UIDatePicker = UIDatePicker()
     
@@ -27,6 +30,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.showsSelectionIndicator = true
+
+        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ViewController.cancel))
+        toolbar.setItems([cancelItem, doneItem], animated: true)
+
+        self.timeTextField.inputView = pickerView
+        self.timeTextField.inputAccessoryView = toolbar
+        
         // Do any additional setup after loading the view.
         
 //        if #available(iOS 10.0, *) {
@@ -89,14 +105,43 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
         deadlineTextField.inputView = datePicker
 
         // 決定バーの生成
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        _ = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        _ = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         toolbar.setItems([spacelItem, doneItem], animated: true)
 
         // インプットビュー設定(紐づいているUITextfieldへ代入)
         deadlineTextField.inputView = datePicker
         deadlineTextField.inputAccessoryView = toolbar
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.timeTextField.text = list[row]
+    }
+
+    @objc func cancel() {
+        self.timeTextField.text = ""
+        self.timeTextField.endEditing(true)
+    }
+    
+    func finish() {
+        self.timeTextField.endEditing(true)
+    }
+
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
     
     @objc func done() {

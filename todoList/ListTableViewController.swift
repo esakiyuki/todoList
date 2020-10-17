@@ -29,8 +29,6 @@ class ListTableViewController: UITableViewController, UNUserNotificationCenterDe
         //        tableView.isEditing = true
         //        tableView.allowsSelectionDuringEditing = true
         
-        
-        
         if #available(iOS 10.0, *) {
             // iOS 10
             let center = UNUserNotificationCenter.current()

@@ -42,8 +42,8 @@ class ScheduleViewController: UIViewController {
     
     var buttonArray: [UIButton] = []
     
-//    let redImage = UIImage(named: "red")! as UIImage
-//    let whiteImage = UIImage(named: "white")! as UIImage
+    let redImage = UIImage(named: "red")! as UIImage
+    let whiteImage = UIImage(named: "white")! as UIImage
 //    var tap: Bool = false
 //    var isChecked = false
 
@@ -67,6 +67,7 @@ class ScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedButton(_ button: UIButton) {
+        
 //        let tag = button.tag
         
 //        if tap {
@@ -93,7 +94,7 @@ class ScheduleViewController: UIViewController {
 //        saveData.set(isChecked, forKey: "TimeTable")
         
 //        let newTimeTable = TimeTable()
-//        newTimeTable.Schedule1 = tap
+////        newTimeTable.Schedule1 = button1
 //        try! realm.write {
 //            realm.add(newTimeTable)
 //        }

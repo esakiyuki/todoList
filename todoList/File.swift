@@ -14,6 +14,8 @@ class Address: Object {
 //    @objc dynamic var photo: Data? = nil
     @objc dynamic var time: String = ""
     @objc dynamic var deadline: String = ""
+    
+//    @objc dynamic var isChecked: Bool = false
 }
 
 //class TimeTable: Object {

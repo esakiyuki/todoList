@@ -16,12 +16,11 @@ class ScheduleViewController: UIViewController {
 //    var TimeTable: TimeTable!
     
 //    let saveData = UserDefaults.standard
-//    var TimeTable: [Bool] = [false, false, false, false, false]
-    var MonDay: [Bool] = [false, false, false, false, false]
-    var TueDay: [Bool] = [false, false, false, false, false]
-    var WedDay: [Bool] = [false, false, false, false, false]
-    var ThuDay: [Bool] = [false, false, false, false, false]
-    var FriDay: [Bool] = [false, false, false, false, false]
+//    var MonDay: [Bool] = [false, false, false, false, false]
+//    var TueDay: [Bool] = [false, false, false, false, false]
+//    var WedDay: [Bool] = [false, false, false, false, false]
+//    var ThuDay: [Bool] = [false, false, false, false, false]
+//    var FriDay: [Bool] = [false, false, false, false, false]
     
 //    var Schedule = User()
 //    var array = ScheduleArray(Schedule.TimeTables)
@@ -57,6 +56,14 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let getMonDay: [Bool] = saveData.array(forKey: "MonDay") as! [Bool]
+//        let getTueDay: [Bool] = saveData.array(forKey: "TueDay") as! [Bool]
+//        let getWedDay: [Bool] = saveData.array(forKey: "WedDay") as! [Bool]
+//        let getThuDay: [Bool] = saveData.array(forKey: "ThuDay") as! [Bool]
+//        let getFriDay: [Bool] = saveData.array(forKey: "FriDay") as! [Bool]
+        
+//        buttonArray = saveData.object(forKey: "tapped") as! [UIButton]
+        
 //        self.TimeTable = TimeTable()
         
         buttonArray = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25]
@@ -67,6 +74,7 @@ class ScheduleViewController: UIViewController {
             //外枠の太さを指定
             (self.buttonArray[i] as AnyObject).layer.borderWidth = 1.0
             buttonArray[i].backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
+//            buttonArray[i].setImage(whiteImage, for: UIControl.State())
         }
         
 //        let MonDay = TimeTable
@@ -76,6 +84,10 @@ class ScheduleViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//    let redImage = UIImage(named: "red")! as UIImage
+//    let whiteImage = UIImage(named: "white")! as UIImage
+//    var flg = false
+    
     @IBAction func tappedButton(_ button: UIButton) {
         if button.backgroundColor == UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0) {
             button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
@@ -83,18 +95,56 @@ class ScheduleViewController: UIViewController {
             button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
         }
         
-        let tag = button.tag
-        if tag < 5 {
-            MonDay[tag] = !MonDay[tag]
-        } else if tag <= 5 && tag >= 10 {
-            TueDay[tag] = !TueDay[tag]
-        } else if tag <= 10 && tag >= 15 {
-            WedDay[tag] = !WedDay[tag]
-        } else if tag <= 15 && tag >= 20 {
-            ThuDay[tag] = !ThuDay[tag]
-        } else if tag <= 20 && tag >= 25 {
-            FriDay[tag] = !FriDay[tag]
-        }
+        
+        
+//        saveData.set(buttonArray, forKey: "tapped")
+        
+//        if flg {
+//            for i in 0...24  {
+//                buttonArray[i].setImage(redImage, for: UIControl.State())
+//                flg = false
+//                print("false")
+//            }
+//        } else {
+//            for i in 0...24  {
+//                buttonArray[i].setImage(whiteImage, for: UIControl.State())
+//                flg = true
+//                print("true")
+//            }
+//        }
+        
+//        if flg {
+//            button1.setImage(whiteImage, for: UIControl.State())
+//            flg = false
+//            print("false")
+//        } else {
+//            button1.setImage(redImage, for: UIControl.State())
+//            flg = true
+//            print("true")
+//        }
+        
+//        if flg {
+//            button.backgroundColor = UIColor(red: 0.8, green: 0.87, blue: 0.8, alpha: 1.0)
+//            flg = false
+//            print("false")
+//        } else {
+//            button.backgroundColor = UIColor(red: 1, green: 0.42, blue: 0.36, alpha: 1.0)
+//            flg = true
+//            print("true")
+//        }
+        
+//        let tag = button.tag
+//        if tag < 5 {
+//            MonDay[tag] = !MonDay[tag]
+//        } else if tag <= 5 && tag >= 10 {
+//            TueDay[tag] = !TueDay[tag]
+//        } else if tag <= 10 && tag >= 15 {
+//            WedDay[tag] = !WedDay[tag]
+//        } else if tag <= 15 && tag >= 20 {
+//            ThuDay[tag] = !ThuDay[tag]
+//        } else if tag <= 20 && tag >= 25 {
+//            FriDay[tag] = !FriDay[tag]
+//        }
         
 //        if tag < 5 {
 //            TimeTable.MonDay[tag] = !TimeTable.MonDay[tag]
@@ -115,6 +165,13 @@ class ScheduleViewController: UIViewController {
         //        try! realm.write {
         //            realm.add(newTimeTable)
         //        }
+        
+//        saveData.set(MonDay, forKey: "MonDay")
+//        saveData.set(TueDay, forKey: "TueDay")
+//        saveData.set(WedDay, forKey: "WedDay")
+//        saveData.set(ThuDay, forKey: "ThuDay")
+//        saveData.set(FriDay, forKey: "FriDay")
+        
         self.navigationController?.popViewController(animated: true)
     }
     

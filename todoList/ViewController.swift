@@ -21,59 +21,59 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
     
     let realm = try! Realm()
     
-//    // 設定に必要なクラスをインスタンス化
-//    var notificationTime = DateComponents()
-//    var trigger: UNNotificationTrigger!
+    // 設定に必要なクラスをインスタンス化
+    var notificationTime = DateComponents()
+    var trigger: UNNotificationTrigger!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        if #available(iOS 10.0, *) {
-//            // iOS 10
-//            let center = UNUserNotificationCenter.current()
-//            center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
-//                if error != nil {
-//                    return
-//                }
-//
-//                if granted {
-//                    print("通知許可")
-//
-//                    let center = UNUserNotificationCenter.current()
-//                    center.delegate = self
-//
-//                } else {
-//                    print("通知拒否")
-//                }
-//            })
-//
-//        } else {
-//            // iOS 9以下
-//            let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
-//            UIApplication.shared.registerUserNotificationSettings(settings)
-//        }
-//        
-//        // 12時に通知する場合
-//        notificationTime.hour = 12
-//        notificationTime.minute = 0
-//        trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
-//
-//        // 設定したタイミングを起点として1分後に通知したい場合
-//        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-//        
-//        // UNMutableNotificationContentクラスをインスタンス化
-//        let content = UNMutableNotificationContent()
-//
-//        // 通知のメッセージセット
-//        content.title = ""
-//        content.body = "締め切り間近の課題があります"
-//        content.sound = UNNotificationSound.default
-//        
-//        // 通知スタイルを指定
-//        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
-//        // 通知をセット
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        if #available(iOS 10.0, *) {
+            // iOS 10
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
+                if error != nil {
+                    return
+                }
+
+                if granted {
+                    print("通知許可")
+
+                    let center = UNUserNotificationCenter.current()
+                    center.delegate = self
+
+                } else {
+                    print("通知拒否")
+                }
+            })
+
+        } else {
+            // iOS 9以下
+            let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+        }
+        
+        // 12時に通知する場合
+        notificationTime.hour = 12
+        notificationTime.minute = 0
+        trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
+
+        // 設定したタイミングを起点として1分後に通知したい場合
+        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+        
+        // UNMutableNotificationContentクラスをインスタンス化
+        let content = UNMutableNotificationContent()
+
+        // 通知のメッセージセット
+        content.title = ""
+        content.body = "締め切り間近の課題があります"
+        content.sound = UNNotificationSound.default
+        
+        // 通知スタイルを指定
+        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
+        // 通知をセット
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         
         tangoTextField.delegate = self

@@ -22,6 +22,7 @@
 		AE987C672526E21000AE2F60 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE987C662526E21000AE2F60 /* File.swift */; };
 		AE987C6A2528A2DD00AE2F60 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AE987C692528A2DD00AE2F60 /* Realm */; };
 		AE987C6C2528A2DD00AE2F60 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AE987C6B2528A2DD00AE2F60 /* RealmSwift */; };
+		AEDD8982253A31870037F96F /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8981253A31860037F96F /* CheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		AE51D6132521BD540081804C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AE51D6152521C3690081804C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AE987C662526E21000AE2F60 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		AEDD8981253A31860037F96F /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				AE51D6132521BD540081804C /* AddViewController.swift */,
 				AE51D6152521C3690081804C /* ScheduleViewController.swift */,
 				AE987C662526E21000AE2F60 /* File.swift */,
+				AEDD8981253A31860037F96F /* CheckBox.swift */,
 			);
 			path = todoList;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				AE51D6002521AE2F0081804C /* ViewController.swift in Sources */,
 				AE51D6102521AF080081804C /* ListTableViewCell.swift in Sources */,
+				AEDD8982253A31870037F96F /* CheckBox.swift in Sources */,
 				AE51D6142521BD550081804C /* AddViewController.swift in Sources */,
 				AE51D5FC2521AE2F0081804C /* AppDelegate.swift in Sources */,
 				AE51D6122521AF440081804C /* ListTableViewController.swift in Sources */,

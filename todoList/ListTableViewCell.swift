@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListTableViewCell: UITableViewCell {
+    
+    let realm = try! Realm()
     
     @IBOutlet var tangoLabel: UILabel!
     @IBOutlet var deadlineLabel: UILabel!
@@ -40,6 +43,14 @@ class ListTableViewCell: UITableViewCell {
             flg = true
             print("true")
         }
+        
+//        let newbox = box()
+//        newbox.checkmark = Bool
+//        let checkmark = RealmOptional<Bool>()
+        
+//        try! realm.write {
+//            realm.add(newbox)
+//        }
         
     }
 

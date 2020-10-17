@@ -148,56 +148,60 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-xf-bK2">
-                                            <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                            <rect key="frame" x="10" y="20" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Msl-xf-bK2" secondAttribute="height" multiplier="1:1" id="lov-Hs-AEy"/>
+                                                <constraint firstAttribute="height" constant="30" id="GQ3-gF-mNe"/>
+                                                <constraint firstAttribute="width" constant="30" id="xyI-g4-crz"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="unchecked"/>
                                             <connections>
                                                 <action selector="check:" destination="NuR-Ns-0Zf" eventType="touchUpInside" id="BIk-BP-10U"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTS-HF-hyR">
-                                            <rect key="frame" x="53" y="25" width="47" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTS-HF-hyR">
+                                            <rect key="frame" x="50" y="25" width="36" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="bTS-HF-hyR" secondAttribute="height" multiplier="47:20" id="Br8-mu-at9"/>
+                                                <constraint firstAttribute="height" constant="20" id="9Ax-Yn-gha"/>
+                                                <constraint firstAttribute="width" constant="36" id="cqy-zL-556"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
                                             <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/15 17:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-D1-aJ2">
-                                            <rect key="frame" x="104" y="25" width="120" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/15 17:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-D1-aJ2">
+                                            <rect key="frame" x="96" y="25" width="135" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Bqi-D1-aJ2" secondAttribute="height" multiplier="6:1" id="x4M-t6-tLg"/>
+                                                <constraint firstAttribute="width" constant="135" id="DPI-cw-Qqg"/>
+                                                <constraint firstAttribute="height" constant="20" id="dbm-yx-nla"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
                                             <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レポート" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-11-OkV">
-                                            <rect key="frame" x="232" y="25" width="169" height="20"/>
+                                            <rect key="frame" x="241" y="25" width="165" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="HA7-11-OkV" secondAttribute="height" multiplier="169:20" id="oKN-Tt-Ovb"/>
+                                                <constraint firstAttribute="height" constant="20" id="7nz-1d-FM7"/>
+                                                <constraint firstAttribute="width" constant="165" id="P6e-vl-Qua"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Corporate-Logo-Bold" family="Corporate Logo Bold" pointSize="20"/>
                                             <color key="textColor" red="0.80000000000000004" green="0.87450980392156863" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="HA7-11-OkV" secondAttribute="bottom" constant="25" id="5I1-PX-mwq"/>
-                                        <constraint firstItem="Bqi-D1-aJ2" firstAttribute="leading" secondItem="bTS-HF-hyR" secondAttribute="trailing" constant="4" id="EAa-AW-LCL"/>
-                                        <constraint firstItem="bTS-HF-hyR" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="topMargin" constant="14" id="GrM-LZ-XDm"/>
-                                        <constraint firstItem="Bqi-D1-aJ2" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="topMargin" constant="14" id="KL7-Xe-8aX"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bTS-HF-hyR" secondAttribute="bottom" constant="14" id="SHJ-ii-WmV"/>
-                                        <constraint firstAttribute="bottom" secondItem="Msl-xf-bK2" secondAttribute="bottom" constant="17" id="Z0g-Ql-X2t"/>
-                                        <constraint firstItem="Msl-xf-bK2" firstAttribute="leading" secondItem="NW1-b4-8FK" secondAttribute="leading" constant="10" id="ZO2-t3-B6H"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Bqi-D1-aJ2" secondAttribute="bottom" constant="14" id="h5j-YE-Ofk"/>
-                                        <constraint firstItem="Msl-xf-bK2" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="top" constant="17" id="k28-VM-2ef"/>
-                                        <constraint firstItem="HA7-11-OkV" firstAttribute="leading" secondItem="Bqi-D1-aJ2" secondAttribute="trailing" constant="8" id="qfL-tl-CKl"/>
-                                        <constraint firstItem="HA7-11-OkV" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="top" constant="25" id="sfe-lx-eqq"/>
-                                        <constraint firstItem="bTS-HF-hyR" firstAttribute="leading" secondItem="Msl-xf-bK2" secondAttribute="trailing" constant="7" id="wOl-ng-xFk"/>
+                                        <constraint firstItem="bTS-HF-hyR" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="topMargin" constant="14" id="8Nu-AR-Xch"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bTS-HF-hyR" secondAttribute="bottom" constant="14" id="AAx-bc-zfC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bqi-D1-aJ2" secondAttribute="bottom" constant="14" id="C7C-65-pHe"/>
+                                        <constraint firstAttribute="bottom" secondItem="HA7-11-OkV" secondAttribute="bottom" constant="25" id="DC2-l6-dEh"/>
+                                        <constraint firstItem="Bqi-D1-aJ2" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="topMargin" constant="14" id="KaL-yK-OF5"/>
+                                        <constraint firstItem="Msl-xf-bK2" firstAttribute="leading" secondItem="NW1-b4-8FK" secondAttribute="leading" constant="10" id="M0U-G6-J0e"/>
+                                        <constraint firstItem="bTS-HF-hyR" firstAttribute="leading" secondItem="Msl-xf-bK2" secondAttribute="trailing" constant="10" id="SSU-VK-vg7"/>
+                                        <constraint firstItem="Bqi-D1-aJ2" firstAttribute="leading" secondItem="bTS-HF-hyR" secondAttribute="trailing" constant="10" id="djY-AN-ys2"/>
+                                        <constraint firstItem="HA7-11-OkV" firstAttribute="leading" secondItem="Bqi-D1-aJ2" secondAttribute="trailing" constant="10" id="dwb-Yt-c1S"/>
+                                        <constraint firstItem="Msl-xf-bK2" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="top" constant="20" id="max-fJ-jf0"/>
+                                        <constraint firstItem="HA7-11-OkV" firstAttribute="top" secondItem="NW1-b4-8FK" secondAttribute="top" constant="25" id="rSz-n4-cDt"/>
+                                        <constraint firstAttribute="bottom" secondItem="Msl-xf-bK2" secondAttribute="bottom" constant="20" id="xD1-Ds-eky"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.396078431372549" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

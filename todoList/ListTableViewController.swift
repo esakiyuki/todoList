@@ -62,7 +62,7 @@ class ListTableViewController: UITableViewController, UNUserNotificationCenterDe
             trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
             
             // 設定したタイミングを起点として1分後に通知したい場合
-            //        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+            //        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60*60, repeats: false)
             
             // UNMutableNotificationContentクラスをインスタンス化
             let content = UNMutableNotificationContent()

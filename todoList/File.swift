@@ -20,6 +20,11 @@ class Address: Object {
 //    let value = RealmOptional<Bool>()
 }
 
+class box: Object {
+//    @objc dynamic var checkmark: Bool = false
+    let checkmark = RealmOptional<Bool>()
+}
+
 class TimeTable: Object {
 //    @objc dynamic var Schedule: Bool = false
     

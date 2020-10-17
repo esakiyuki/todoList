@@ -336,7 +336,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.lifeistech.SchoolTodo;
 				PRODUCT_NAME = SchoolToDo;
 				PROVISIONING_PROFILE_SPECIFIER = "L4S8-YukkiEsaki-Distribution";
@@ -358,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.lifeistech.SchoolTodo;
 				PRODUCT_NAME = SchoolToDo;
 				PROVISIONING_PROFILE_SPECIFIER = "L4S8-YukkiEsaki-Distribution";

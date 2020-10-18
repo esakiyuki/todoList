@@ -11,8 +11,6 @@ import RealmSwift
 
 class ListTableViewCell: UITableViewCell {
     
-    let realm = try! Realm()
-    
     @IBOutlet var tangoLabel: UILabel!
     @IBOutlet var deadlineLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
@@ -31,26 +29,25 @@ class ListTableViewCell: UITableViewCell {
     
     let checkedImage = UIImage(named: "checked")! as UIImage
     let uncheckedImage = UIImage(named: "unchecked")! as UIImage
-    var flg = false
+//    var flg = false
+    
+    let realm = try! Realm()
+    let newbox = box()
     
     @IBAction func check(_ sender: Any) {
-        if flg {
+        if newbox.checkmark {
             checkBox.setImage(uncheckedImage, for: UIControl.State())
-            flg = false
+            newbox.checkmark = false
             print("false")
         } else {
             checkBox.setImage(checkedImage, for: UIControl.State())
-            flg = true
+            newbox.checkmark = true
             print("true")
         }
         
-//        let newbox = box()
-//        newbox.checkmark = Bool
-//        let checkmark = RealmOptional<Bool>()
-        
-//        try! realm.write {
-//            realm.add(newbox)
-//        }
+        try! realm.write {
+            realm.add(newbox)
+        }
         
     }
 
